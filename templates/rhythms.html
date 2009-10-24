@@ -6,7 +6,7 @@
 	<link href="../media/css/style.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
 	#dvleftpanel #midcont {
-		border-right: 1px solid #C2C2C2;
+            border-right: 1px solid #C2C2C2;
 	}
 	#dvrightpanel p {
 	    font-size:15px;
@@ -72,12 +72,7 @@
                 <strong>{{ audio.label }}</strong><br>
                 <embed type="application/x-shockwave-flash" src="http://www.odeo.com/flash/audio_player_standard_gray.swf"
                        width="200" height="50" allowScriptAccess="always" wmode="transparent"
-                       flashvars="audio_duration=DURATION&amp;external_url=/media/rhythms/{{ audio.link }}" />
-                
-                <!--<embed type="application/x-shockwave-flash"
-                src="http://www.google.com/reader/ui/3247397568-audio-player.swf?audioUrl=http://doumtek.net/media/rhythms/{{ audio.link }}"
-                width="400" height="27" allowscriptaccess="never" quality="best"
-                bgcolor="#ffffff" wmode="window" flashvars="playerMode=embedded" />-->
+                       flashvars="audio_duration=DURATION&amp;external_url=/media/rhythms/{{ audio.link }}" />              
             </p>
       	{% endfor %}  	
         </p>
@@ -98,7 +93,7 @@
             {{ ry.video_example|safe }}
         </p>
         <p>
-       *For more information about this, and other rhythms, check out <a href="http://www.khafif.com/rhy/" title="Jas's Middle Eastern Rhythms FAQ" target="_blank">Jas's Middle Eastern Rhythms FAQ</a>.
+       *For more information, check out <a href="http://www.khafif.com/rhy/" title="Jas's Middle Eastern Rhythms FAQ" target="_blank">Jas's Middle Eastern Rhythms FAQ</a>.
         </p>
 
         {% empty %}
