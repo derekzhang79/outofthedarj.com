@@ -3,7 +3,7 @@
 {% block title %}Out of the Darj - Classes{% endblock %}
 
 {% block navigation_tabs %}
-	<li><a href="/"><span>Home</span></a></li>
+    <li><a href="/"><span>Home</span></a></li>
     <li><a href="/classes/"><span>Classes</span></a></li>
     <li><a href="/events/"><span>Events</span></a></li>
     <li><a href="/rhythms/"><span>Rhythms</span></a></li>
@@ -12,12 +12,30 @@
 {% endblock %}
 
 {% block content_left %}
-
+    <div id="topimage">
+    Audio & Video Clips
+    </div>
+    <div id="midcont">
+        {% for av in av_list %}
+            {% ifchanged av.category %}
+                <p><strong>{{ av.category }}</strong></p>
+            {% endifchanged %}
+            {% ifnotequal av.name "Featured Video" %}
+                <p><a href="{{ av.link }}" target="_blank">{{ av.name }}</a></p>
+            {% endifnotequal %}
+        {% endfor %}
+    </div>
 {% endblock %}
 
 
 {% block content_right %}
-    <h1>Coming Soon!<br> 
-        Audio, Video, and Photos.</h1>
+    <h1>This Month's Featured Video:</h1><br>
+    {% for av in av_list %}
+        {% ifequal av.name "Featured Video" %}
+        <p>
+        {{ av.link|safe }}
+        </p>
+        {% endifequal %}
+    {% endfor %}
 {% endblock %}
     
