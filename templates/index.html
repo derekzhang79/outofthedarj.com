@@ -1,0 +1,64 @@
+{% extends "base_template.html" %}
+
+{% block content_left %}
+	<div id="topimage">
+	    Testimonials
+    </div>
+    <div id="midcont">
+	    {% if testimonial %}
+	    <p>"{{ testimonial.testimonial }}"</p>
+	    <p><span>- {{ testimonial.name }}</span></p>
+	    {% endif %}
+    </div>
+    <!--<div id="leftfoot"><span>Nice little Sidebar</span>
+	    <p>This is where you can put some services text fillers.</p>
+    </div>-->
+{% endblock %}
+
+{% block content_right %}
+	<h1>Birmingham's Middle Eastern Percussion Ensemble</h1>
+	<p>
+            Welcome to OutoftheDarj.com, the home of Birmingham's premiere
+            Middle Eastern Percussion Ensemble. Out of the Darj is a group of local
+            musicians with a love of Arabic percussion and the desire to share that
+            passion with the community. We are available for events requiring musicians
+            and for dancers requiring a band. To see some of our previous work, check out
+            our <a href="/av/">Media page</a>!
+        </p>
+	
+	<p>
+            If you are interested in learning more about us or having us play at
+            your event, click the email icon below to get in contact with us.
+        </p>
+	
+	<div class="line"><img src="/media/images/h_line.jpg" alt=""
+		width="535	" height="1" title="" /></div>
+	
+	<h1>Are you interested in learning how to play?</h1>
+	<p>
+            We have classes every Friday night! Learn the basics of playing 
+            the doumbek and frame drum. Are you a dancer who wants to
+            understand the rhythms? Learn to feel the beat and understand
+            the timing of each rhythm.
+        </p>
+	
+        <div class="learn" title="More information about classes">
+            <span><a href="/classes/">LEARN MORE</a></span>
+        </div>
+	
+	<div id="righttfoot">
+            <a href="http://www.facebook.com/pages/Out-of-the-Darj/98853189756">
+                <img src="/media/images/facebook.png" alt="" title="" />
+            </a>
+            <p>Follow us on Facebook.</p>
+            <a href="http://twitter.com/out_of_the_darj">
+                <img src="/media/images/twitter.png" alt="" title="" />
+            </a>
+            <p>Follow us on Twitter.</p>
+            <a href="mailto:mark@timewasted.net">
+                <img src="/media/images/email.png" alt="Email us" title="Email us" />
+            </a>
+            <p>Join our email list or ask a question.</p>
+	</div>
+	
+{% endblock %}

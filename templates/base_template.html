@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>{% block title %}Out of the Darj - Birmingham's Middle Eastern Percussion Ensemble{% endblock %}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        {% block stylesheet %}
+        <link href="../media/css/style.css" rel="stylesheet" type="text/css" />
+        {% endblock %}
+    </head>
+    <body>
+        <div id="dvmaincontainer">
+            <!--main div container starts here-->
+            <div id="dvtopcontainer">
+                <!-- top container starts here-->
+                <div id="dvlogocontainer">
+                    <!-- logo container starts here-->
+                    <h1>Out of the Darj &nbsp;     من ضارج</h1>
+                    <h4>Birmingham's Middle Eastern Percussion Ensemble</h4>
+
+                    <!-- logo container ends here-->
+                </div>
+                <div id="dvnavicontainer">
+                    <!-- navigation div starts here-->
+                    <img src="/media/images/navi_left.jpg" alt="" />
+                    <div id="tabs1" >
+                        <ul>
+                            <!-- CSS Tabs -->
+                            {% block navigation_tabs %}
+                            <li id="current"><a href="/"><span>Home</span></a></li>
+                            <li><a href="/classes/"><span>Classes</span></a></li>
+                            <li><a href="/events/"><span>Events</span></a></li>
+                            <li><a href="/rhythms/"><span>Rhythms</span></a></li>
+                            <li><a href="/av/"><span>Media</span></a></li>
+                            <li><a href="/about/"><span>About Us</span></a></li>
+                            {% endblock %}
+                        </ul>
+                    </div>
+                    <img src="/media/images/navi_right.jpg" alt="" />
+                    <!-- navogation div ends here-->
+                </div>
+                <!-- top container ends here-->
+            </div>
+            <div id="dvbodycontainer">
+                <!-- body div starts here-->
+                <div id="dvbannerbgcontainer">
+                    <!-- banner bg div starts here-->
+                    <div class="lftcontainer">
+                        <div class="dvbannerleft">
+<!--                            <a href="/" title="Home">
+                            <img src="/media/images/Out_of_the_Darj_Logo_2.gif"  alt="Out of the Darj logo" title="Home"/>
+                            </a>-->
+                        </div>
+                    </div>
+                    <div id="dvbanner">
+                        <!-- banner div starts here-->
+                        {% block banner %}
+                        <img src="/media/images/banner.jpg"  alt="" title=""
+                           style="opacity:0.8;"  />
+                        {% endblock %}
+                        <!-- banner div ends here-->
+                    </div>
+                    <!-- banner bg div ends here-->
+                </div>
+                <div id="dvleftpanel">
+                    <!-- left panel div starts here-->
+                    {% block content_left %}
+
+
+                    {% endblock %}
+                    <!-- left pannel div ends here-->
+                </div>
+                <div id="dvrightpanel">
+                    <!-- right panel div starts here-->
+                    {% block content_right %}
+                 
+                    {% endblock %}
+                    <!-- right panel div ends here-->
+                </div>
+                <!-- body div ends here-->
+            </div>
+            <div id="dvfootercontainer">
+                <!-- footer div starts here-->
+                <div id="foottop">
+                    <p>
+                        <a href="http://www.djangoproject.com/">
+                            <img src="http://media.djangoproject.com/img/badges/djangosite80x15_grey.gif"
+                                border="0" alt="A Django site." title="A Django site." />
+                        </a>
+                    </p>
+                    <p><span>Copyright &copy 2009 Out of the Darj</span>
+                    <a href="/" title="Home">Home</a>
+                    <a href="/classes/" title="Classes">Classes</a>
+                    <a href="/events/" title="Events">Events</a>
+                    <a href="/rhythms/" title="Rhythms">Rhythms</a>
+                    <a href="/av/" title="Media">Media</a>
+                    <a href="/about/" title="About Us">About Us</a></p>
+                    <p style="padding:5px 0px 0px 20px;">
+                            Logo and background design by Ryan Carlson.
+                            Banner image by Robert Stewart. Programming by Mark Freeman.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--main div container ends here-->
+        </div>
+    </body>
+</html>

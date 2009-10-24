@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Out of the Darj - Birmingham's Middle Eastern Percussion Ensemble</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../media/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="dvmaincontainer">
+            <!--main div container starts here-->
+            <div id="dvtopcontainer">
+                <!-- top container starts here-->
+                <div id="dvlogocontainer">
+                    <!-- logo container starts here-->
+                    <h1>Out of the Darj</h1>
+                    <h4>Middle Eastern Percussion</h4>
+
+                    <!-- logo container ends here-->
+                </div>
+                <div id="dvnavicontainer">
+                    <!-- navigation div starts here-->
+                    <img src="/media/images/navi_left.jpg" alt="" />
+                    <div id="tabs1" >
+                        <ul>
+                            <!-- CSS Tabs -->
+                            <li id="current"><a href="/"><span>Home</span></a></li>
+                            <li><a href="/classes/"><span>Classes</span></a></li>
+                            <li><a href="/events/"><span>Events</span></a></li>
+                            <li><a href="/rhythms/"><span>Rhythms</span></a></li>
+                            <li><a href="/av/"><span>Media</span></a></li>
+                        </ul>
+                    </div>
+                    <img src="/media/images/navi_right.jpg" alt="" />
+                    <!-- navigation div ends here-->
+                </div>
+                <!-- top container ends here-->
+            </div>
+            <div id="dvbodycontainer">
+                <!-- body div starts here-->
+                <div id="dvbannerbgcontainer">
+                    <!-- banner bg div starts here-->
+                    <div class="lftcontainer">
+                        <div class="dvbannerleft">
+                            <img src="/media/images/Out_of_the_Darj_Logo_2.gif"  alt="" title=""/>
+                        </div>
+                    </div>
+                    <div id="dvbanner">
+                        <!-- banner div starts here-->
+                        <img src="/media/images/banner.jpg"  alt="" title=""/>
+                        <!-- banner div ends here-->
+                    </div>
+                    <!-- banner bg div ends here-->
+                </div>
+                <div id="dvleftpanel">
+                    <!-- left pannel div starts here-->
+                    <div id="topimage">
+                        <!-- top left div starts here-->
+                        Testimonials
+                        <!--<img src="/media/images/client.jpg" alt="Testimonials" width="274" height="34" title="Client Testimonials" /> -->
+                        <!-- top left div end here-->
+                    </div>
+                    <div id="midcont">
+                        <!-- left body div starts here-->
+
+                        {% if testimonial %}
+                        <p>"{{ testimonial.testimonial }}"</p>
+                        <p><span>- {{ testimonial.name }}</span></p>
+                        {% endif %}
+                        <!-- left body div ends here-->
+                    </div>
+                    <div id="leftfoot"><span>Nice little Sidebar</span>
+                        <p>This is where you can put some services text fillers.</p>
+                        <p>The more you put the better</p>
+                    </div>
+                    <!-- left pannel div ends here-->
+                </div>
+                <div id="dvrightpanel">
+                    <!-- right panel div starts here-->
+                    <h1>Leader in E-Commerce Solutions</h1>
+                    <p>We are an eco based web and logo design company. Our main focus is working with companies that are green friendly. We specialize in getting businesses onto the Internet quickly and professionally. From custom logo identity, to fully branded web and print, we can take your business to success!</p>
+                    <p>This area is where your intro text can go, and this is what your text links will look like.</p>
+                    <div class="line"><img src="/media/images/h_line.jpg" alt="" width="535	" height="1" title="" /></div>
+                    <h1>Our Amazing Team</h1>
+                    <p>We specialize in getting businesses onto the Internet quickly and professionally. As a one stop provider you will find it easier than ever to gain the strong web presence every modern business requires; from design to brand development.</p>
+                    <div class="learn"><span><a href="#">LEARN MORE</a></span></div>
+                    <div id="righttfoot"> <img src="/media/images/facebook.png" alt="" title="" />
+                        <p>Follow us on Facebook.</p>
+                        <img src="/media/images/twitter.png" alt="" title="" />
+                        <p>Follow us on Twitter.</p>
+                        <img src="/media/images/email.png" alt="" title="" />
+                        <p>Sign up for our email list.</p>
+                    </div>
+                    <!-- right panel div ends here-->
+                </div>
+                <!-- body div ends here-->
+            </div>
+            <div id="dvfootercontainer">
+                <!-- footer div starts here-->
+                <div id="foottop">
+                    <p><span>Copyright &copy 2009 Out of the Darj</span> <a href="#" title="Home">Home</a><a href="#" title="Services">Classes</a><a href="#" title="Portfolio">Events</a><a href="#" title="Blog">Rhythms</a><a href="#" title="Blog">About Us</a></p>
+                </div>
+                <!-- footer div ends here-->
+            </div>
+            <!--main div container ends here-->
+        </div>
+    </body>
+</html>

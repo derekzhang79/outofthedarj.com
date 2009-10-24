@@ -1,0 +1,48 @@
+{% extends "base_template.html" %}
+
+{% block title %}Out of the Darj - Classes{% endblock %}
+
+{% block stylesheet %}
+	<link href="../media/css/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+	#dvrightpanel p strong {
+	    font-size:18px;
+	    line-height:21px;
+	}
+	</style>
+{% endblock %}
+
+{% block navigation_tabs %}
+	<li><a href="/"><span>Home</span></a></li>
+    <li><a href="/classes/"><span>Classes</span></a></li>
+    <li><a href="/events/"><span>Events</span></a></li>
+    <li><a href="/rhythms/"><span>Rhythms</span></a></li>
+    <li><a href="/av/"><span>Media</span></a></li>
+    <li id="current"><a href="/about/"><span>About Us</span></a></li>
+{% endblock %}
+
+
+{% block content_left %}
+    <div id="topimage">
+	    Our Friends
+    </div>
+    <div id="midcont">
+        <ul>
+        {% for link in links %}
+        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content_right %}
+    <h1>Meet the members of Out of the Darj</h1>
+        <p></p>
+	{% for student in students %}
+            <p>
+                <img src="/media/{{ student.image }}" style="float:left;margin:0px 10px 3px 0;"/>
+                <strong>{{ student.name }}</strong><br>
+                {{ student.bio }}
+            </p>
+        {% endfor %}
+{% endblock %}

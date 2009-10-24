@@ -1,0 +1,5 @@
+TODO ON OOTD
+
+* Contact us page doesn't need to be a flat page. Should probably just have a form people can fill out and submit it. This will keep spiders from picking up your email address as well.
+
+* Need to do a custom 500/404 page for the site.

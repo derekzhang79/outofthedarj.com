@@ -1,0 +1,108 @@
+{% extends "base_template.html" %}
+
+{% block title %}Out of the Darj - Rhythms{% endblock %}
+    
+{% block stylesheet %}
+	<link href="../media/css/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+	#dvleftpanel #midcont {
+		border-right: 1px solid #C2C2C2;
+	}
+	#dvrightpanel p {
+	    font-size:15px;
+	    line-height:18px;
+	}
+	</style>
+{% endblock %}
+    
+{% block navigation_tabs %}
+	<li><a href="/"><span>Home</span></a></li>
+    <li><a href="/classes/"><span>Classes</span></a></li>
+    <li><a href="/events/"><span>Events</span></a></li>
+    <li id="current"><a href="/rhythms/"><span>Rhythms</span></a></li>
+    <li><a href="/av/"><span>Media</span></a></li>
+    <li><a href="/about/"><span>About Us</span></a></li>
+{% endblock %}
+
+{% block content_left %}
+<div id="topimage">
+    Rhythms
+</div>
+<div id="midcont">
+    {% for ry in rhythms %}
+    {% ifchanged ry.time_signature %}
+    <h3>{{ ry.time_signature }}</h3>
+    {% endifchanged %}
+    <p>
+        <a href="./?id={{ ry.slug }}">{{ ry.name }}</a><br />
+        {{ ry.short_description }}<br />
+    </p>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block content_right %}
+    <p>
+    {% for ry in rhythm %}
+        <p>
+        <b>{{ ry.time_signature }} - {{ ry.name }}</b>
+        </p>
+        <p>
+            {{ ry.description|safe }}
+	</p>
+        <p>
+            {% if ry.variation_one%}
+                Variation 1: {{ ry.variation_one }}<br />
+            {% endif %}
+            {% if ry.variation_two%}
+                Variation 2: {{ ry.variation_two }}<br />
+            {% endif %}
+            {% if ry.variation_three%}
+                Variation 3: {{ ry.variation_three }}<br />
+            {% endif %}
+        </p>
+        {% if ry.score_image %}
+            <p>
+                <img src="{{ ry.score_image }}" alt="{{ ry.name }} score example image.">
+            </p>
+        {% endif %}
+        <p>
+      	{% for audio in audio_list %}
+            <p>
+                <strong>{{ audio.label }}</strong><br>
+                <embed type="application/x-shockwave-flash" src="http://www.odeo.com/flash/audio_player_standard_gray.swf"
+                       width="200" height="50" allowScriptAccess="always" wmode="transparent"
+                       flashvars="audio_duration=DURATION&amp;external_url=http://doumtek.net/media/rhythms/{{ audio.link }}" />
+                
+                <!--<embed type="application/x-shockwave-flash"
+                src="http://www.google.com/reader/ui/3247397568-audio-player.swf?audioUrl=http://doumtek.net/media/rhythms/{{ audio.link }}"
+                width="400" height="27" allowscriptaccess="never" quality="best"
+                bgcolor="#ffffff" wmode="window" flashvars="playerMode=embedded" />-->
+            </p>
+      	{% endfor %}  	
+        </p>
+        
+        {% if songs %}
+            <p>
+                <b>Songs:</b>
+            </p>
+            <p>
+            {% for s in songs %}
+                Title:{{ s.title }}<br />
+                Artist: {{ s.artist }}, Album: {{ s.album }}<br/>
+                <a href="{{ s.link }}">{{ s.link }}</a>
+            {% endfor %}
+            </p>
+        {% endif %}
+        <p>
+            {{ ry.video_example|safe }}
+        </p>
+        <p>
+       *For more information about this, and other rhythms, check out <a href="http://www.khafif.com/rhy/" title="Jas's Middle Eastern Rhythms FAQ" target="_blank">Jas's Middle Eastern Rhythms FAQ</a>.
+        </p>
+
+        {% empty %}
+            <p>Sorry, you must choose a valid rhythm.</p>
+        {% endfor %}
+        </p>
+{% endblock %}

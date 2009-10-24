@@ -1,0 +1,51 @@
+{% extends "base_template.html" %}
+
+{% block title %}Out of the Darj - Classes{% endblock %}
+
+{% block navigation_tabs %}
+	<li><a href="/"><span>Home</span></a></li>
+    <li><a href="/classes/"><span>Classes</span></a></li>
+    <li id="current"><a href="/events/"><span>Events</span></a></li>
+    <li><a href="/rhythms/"><span>Rhythms</span></a></li>
+    <li><a href="/av/"><span>Media</span></a></li>
+    <li><a href="/about/"><span>About Us</span></a></li>
+{% endblock %}
+
+
+{% block content_left %}
+	<div id="topimage">
+	    Upcoming Performances
+    </div>
+    <div id="midcont">
+        {% if events_list %}
+        	{% for event in events_list %}
+        	<p>
+        		<strong><a href="./?id={{ event.id }}">{{ event.name }}</a>:<br></strong>
+        		--{{ event.date|date }} at {{ event.date|time }}--<br>
+        		{{ event.blurb }}
+        	</p>
+        	{% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block content_right %}
+	{% for event in event_details %}
+            <h1>{{ event.name }}</h1>
+	    <p>
+                <strong>When: </strong>{{ event.date|date }} at {{ event.date|time }}<br>
+                <strong>Where: </strong>{{ event.location }}
+                <p><strong>Details: </strong>{{ event.description|safe }}</p>
+                <p>{{ event.advertisement_image }}</p>
+            </p>
+	{% empty %}
+            <h1>Our next event is: {{ current_event.name }}</h1>
+	    <p>
+                <strong>When: </strong>{{ current_event.date|date }} at {{ current_event.date|time }}<br>
+                <strong>Where: </strong>{{ current_event.location }}
+                <p><strong>Details: </strong>{{ current_event.description|safe }}</p>
+                <p>{{ current_event.advertisement_image }}</p>
+            </p>
+	{% endfor %}
+		
+{% endblock %}

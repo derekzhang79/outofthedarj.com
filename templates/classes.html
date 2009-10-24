@@ -1,0 +1,63 @@
+{% extends "base_template.html" %}
+
+{% block title %}Out of the Darj - Classes{% endblock %}
+
+
+
+{% block navigation_tabs %}
+	<li><a href="/"><span>Home</span></a></li>
+    <li id="current"><a href="/classes/"><span>Classes</span></a></li>
+    <li><a href="/events/"><span>Events</span></a></li>
+    <li><a href="/rhythms/"><span>Rhythms</span></a></li>
+    <li><a href="/av/"><span>Media</span></a></li>
+    <li><a href="/about/"><span>About Us</span></a></li>
+{% endblock %}
+
+
+{% block content_left %}
+	<div id="topimage">
+	    Student of the Month
+    </div>
+    <div id="midcont">
+	    {% if sotm %}
+	    <p>This month's featured student is <strong>{{ sotm.name }}</strong>!</p>
+	    <p>"{{ sotm.blurb }}"</p>
+            <img src="/media/{{ sotm.image }}"/>
+	    {% endif %}
+    </div>
+{% endblock %}
+
+{% block content_right %}
+	<h1>Beginner's Middle Eastern Percussion</h1>
+	<p>
+		Fridays:<br>
+		Beginners - 6:30 - 7:30 pm<br>
+		Intermediate - 7:30 - 8:30 pm
+	</p>
+	<p>
+		Drop-in: $5.00 per class, or $8.00 for both classes<br>
+		10 Week Class Card: $40.00 Beginner, or $70.00 for both classes
+	</p>
+	<p>
+		Please call or email to register for this class 
+	</p>
+	<p>
+		Class will include introduction to Middle Eastern percussion instruments and basic, standard rhythms.
+		 Core frame and doumbek technique will be a strong focus of the class. Class will include music theory as it pertains to the standard rhythms. It is highly suggested that you bring a Middle Eastern frame drum (tar/def) or doumbek (no djembes please). There will be a couple of extra frames for drop in students, 
+		 however those taking the entire session will be expected to provide their own instrument. 
+	</p>
+	
+	<div class="line"><img src="/media/images/h_line.jpg" alt=""
+		width="535	" height="1" title="" /></div>
+	
+	<p>
+		All classes are held at <a href="http://www.devyani.net">Devyani Dance Center</a><br>
+		"Birmingham's International Dance Culture Connection"
+	</p>	
+	<p>
+		2621 Crestwood Blvd.<br>
+		Birmingham, AL 35210<br>
+		(205) 956-DEVI
+	</p>
+	
+{% endblock %}
