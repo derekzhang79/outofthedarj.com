@@ -12,8 +12,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'ootd'             # Or path to database file if using sqlite3.
+DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = 'ootd.db'             # Or path to database file if using sqlite3.
 DATABASE_USER = 'mark'             # Not used with sqlite3.
 DATABASE_PASSWORD = 'tarab8198'         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -38,7 +38,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/media/storage/code/django/ootd/media/'
+MEDIA_ROOT = '/home/mark/Code/django/ootd/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -69,8 +69,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'ootd.urls'
 
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
-
+TEMPLATE_DIRS = (
+    #os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
+    '/home/mark/Code/django/ootd/templates/',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

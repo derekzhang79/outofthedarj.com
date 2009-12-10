@@ -9,7 +9,7 @@ class Event(models.Model):
     description = models.TextField()
     
     class Meta:
-        ordering = ['name',]
+        ordering = ['date',]
         
     def __unicode__(self):
         return self.name

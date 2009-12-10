@@ -35,7 +35,7 @@ urlpatterns = patterns('',
     
     # FOR TEST SEVER ONLY!!!  Loading static stylesheet for template, only when DEBUG is True
     (r'media/(?P<path>.*)$', 'django.views.static.serve',
-     {'document_root': '/media/storage/code/django/ootd/media'}),
+     {'document_root': '/home/mark/Code/django/ootd/media'}),
             
     # flatpages - about us, contact us, etc.
     #(r'', include('django.contrib.flatpages.urls')),
