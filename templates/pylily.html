@@ -1,0 +1,20 @@
+{% extends "base_template.html" %}
+
+{% block title %}Create Score Image{% endblock %}
+
+{% block content_right %}
+<p>To generate a score image, type in the time signature (2/4, 4/4, etc) followed imemdiately by a comma and the rhythm in Dtk notation. For example, the rhythm Ayuub would be entered as "2/4,D-_kD-T-" (excluding the quotes). Note that dotted notes, such as the D-_ at the beginning of Ayuub should be entered as the beat, followed by the extention of the beat (-) and a rest (_).</p>
+
+<form method="get" action="/pylily/">
+    <p><label for ="id_q"><b>Rhythm:</b></label>
+    <input type="text" name="q" id="id_q" value="{{ query }}" />
+    <input type="submit" value="Submit" /></p>
+</form>
+
+{% if score %}
+    <p>
+    <img src="/media/pylilydtk/{{ score }}"/> 
+    </p> 
+    <p>Right click the image to save it to your computer.</p>
+    {% endif %}
+{% endblock %}

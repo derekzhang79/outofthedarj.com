@@ -5,6 +5,7 @@ from testimonials.views import random_testimonial
 from audio_video.views import audio_video
 from students.views import classes, about
 from events.views import events
+from pylilydtk.views import pylily
 
 # enable admin
 from django.contrib import admin
@@ -32,6 +33,8 @@ urlpatterns = patterns('',
     (r'^events/$', events),
 
     (r'^about/$', about),
+    
+    (r'^pylily/$', pylily),
     
     # FOR TEST SEVER ONLY!!!  Loading static stylesheet for template, only when DEBUG is True
     (r'media/(?P<path>.*)$', 'django.views.static.serve',

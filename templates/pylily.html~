@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Create Score Image</title>
+    </head>
+    <body>
+        <form method="get" action="/pylily/">
+        <p><label for ="id_q">Rhythm (in DTK notation):</label>
+        <input type="text" name="q" id="id_q" value="" />
+        <input type="submit" value="Submit" /></p>
+        </form>
+
+        {% if score %}
+            <p>Score results:</p>
+
+	    {{ score }}
+
+        {% endif %}
+
+    </body>
+</html>
