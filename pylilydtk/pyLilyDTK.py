@@ -13,7 +13,6 @@ time_signature = ''
 process_dir = settings.PYLILY_DIR
 
 def get_input_file(file_name):
-    print "Opening input file..."
     global input_file
     input_file = file_name
     in_line = open(file_name, 'r').readline().strip()
@@ -28,7 +27,6 @@ def set_rhythm(in_line):
     rhythm_in = parse_rhythm(rhythm_in)
 
 def process_template():
-    print "Processing rhythm and creating lilypond file..."
     template = open(process_dir + 'template.ly', 'r')
     global out_file
     out_file = input_file.replace('.txt', '.ly')
@@ -60,7 +58,6 @@ def parse_rhythm(rhythm_in):
     for input: D-T-tkD-D-tkT-tk
     expected result is: c8-"D" c8-"T" c16-"t" c16-"k" c8-"D" c8-"D" c16-"t" c16-"k" c8-"T" c16-"t" c16-"k"
     """
-    print "Parsing the rhythm..."
     rhythm_in = rhythm_in 
     rhythm_out = ''
     tone = ''
@@ -99,7 +96,6 @@ def parse_rhythm(rhythm_in):
     return rhythm_out
 
 def clean_up_files():
-    print 'Deleting extra files...'
     commands.getoutput('rm ' + process_dir + '*.pdf')
     commands.getoutput('rm ' + process_dir + '*.ps')
     commands.getoutput('rm ' + process_dir + '*.eps')
@@ -125,4 +121,3 @@ if __name__ == '__main__':
     process_template()
     make_score()
     clean_up_files()
-    print 'Conversion complete.'
