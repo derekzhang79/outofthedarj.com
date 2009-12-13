@@ -12,12 +12,6 @@ out_file = ''
 time_signature = ''
 process_dir = settings.PYLILY_DIR
 
-def get_input_file(file_name):
-    global input_file
-    input_file = file_name
-    in_line = open(file_name, 'r').readline().strip()
-    return in_line
-
 def set_rhythm(in_line):
     global rhythm_in
     global time_signature
@@ -102,22 +96,3 @@ def clean_up_files():
     commands.getoutput('rm ' + out_file)
 
 
-if __name__ == '__main__':
-
-    parser = optparse.OptionParser()
-    parser.add_option('-r', '--rhythm', help='Alows you to enter a rhythm as a command line argument.', dest='rhythm', action='store')
-    parser.add_option('-f', '--file', help='Allows you to enter the name of an input file.', dest='file_name', action='store')
-    (opts, args) = parser.parse_args()
-
-    if opts.rhythm:
-        input_file = str(datetime.datetime.now().microsecond) + '.txt'
-        set_rhythm(opts.rhythm)
-    elif opts.file_name:
-        set_rhythm(get_input_file(opts.file_name))
-    else:
-        sys.stderr.write("Enter 'pyLilyDTK --help' for usage instructions\n")
-        raise SystemExit(1)
-
-    process_template()
-    make_score()
-    clean_up_files()
