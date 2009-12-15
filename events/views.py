@@ -12,7 +12,7 @@ def events(request):
     if 'id' in request.GET:
         event_details = events.filter(id__iexact=request.GET['id'])
     else:
-        current_event = events[0]
+        current_event = events_list[0]
     return render_to_response('events.html',{'events_list': events_list,
                                               'event_details': event_details,
                                               'current_event': current_event})
